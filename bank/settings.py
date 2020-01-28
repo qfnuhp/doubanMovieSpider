@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for doubanMovie project
+# Scrapy settings for bank project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,16 +9,21 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'doubanMovie'
+BOT_NAME = 'bankSpider'
 
-SPIDER_MODULES = ['doubanMovie.spiders']
-NEWSPIDER_MODULE = 'doubanMovie.spiders'
+SPIDER_MODULES = ['bankSpider.spiders']
+NEWSPIDER_MODULE = 'bankSpider.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'doubanMovie (+http://www.yourdomain.com)'
 USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20100101 Firefox/10.0"
-
+MONGO_HOST = "localhost"  # 主机IP
+MONGO_PORT = 27017  # 端口号
+MONGO_DB = "Spider"  # 库名
+MONGO_COLL = "bank"  # collection名
+# MONGO_USER = ""
+# MONGO_PSW = ""
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
@@ -69,9 +74,9 @@ ROBOTSTXT_OBEY = False
 #    'doubanMovie.pipelines.DoubanmoviePipeline': 300,
 #}
 
-ITEM_PIPELINES = {'doubanMovie.pipelines.DoubanmoviePipeline': 2,
-                  'doubanMovie.pipelines.MyImagesPipeline':1 }
-#ITEM_PIPELINES =  {'bank.pipelines.BankPipeline': 300}
+# ITEM_PIPELINES = {'doubanMovie.pipelines.DoubanmoviePipeline': 2,
+#                   'doubanMovie.pipelines.MyImagesPipeline':1 }
+ITEM_PIPELINES =  {'bank.pipelines.BankPipeline': 300}
 IMAGES_URLS_FIELD = 'url'
 IMAGES_STORE = r'.'
 
