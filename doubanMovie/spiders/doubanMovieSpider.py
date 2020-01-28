@@ -9,7 +9,7 @@ class movieSpider(Spider):
     #start urls
     start_urls = ["https://movie.douban.com/top250"] 
     for i in range(1,10):
-        start_urls.append("https://movie.douban.com/top250?start=%d&filter="%(25*i))
+        start_urls.append("https://movie.douban.com/top250?start=%d&filter="%(25*iv r))
 
     #parse function
     def parse(self, response):
